@@ -1,0 +1,21 @@
+body {
+        text-align: center;
+        font-family: arial;
+        font-size: 11pt;
+        margin: 0;
+        padding: 0;
+      }
+      
+table {
+        border: solid 1px;
+        margin: 0px auto;
+        align
+}
+
+thead {
+       border-bottom: 1px solid black; 
+}
+
+tr:nth-child(even) {
+    background-color: #efefef;
+}

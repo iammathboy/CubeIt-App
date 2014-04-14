@@ -1,12 +1,4 @@
-body {
-        text-align: center;
-        font-family: arial;
-        font-size: 11pt;
-        margin: 0;
-        padding: 0;
-      }
- 
- #timer_controls {
+#timer_controls {
 	margin-top: -5px;
  }
  

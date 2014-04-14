@@ -1,11 +1,11 @@
 <?php
 /* @var $this SiteController */
-
 $this->pageTitle=Yii::app()->name;
 ?>
 
 <script src="scripts/prefixfree.min.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="css/stopwatch.css">
+<link rel="stylesheet" type="text/css" href="css/mainPage.css">
 
 
 <input id="start" name="controls" type="radio"/>
@@ -68,6 +68,56 @@ $this->pageTitle=Yii::app()->name;
 
 <div class="stuff">
 
-
+	<table>
+		<thead>
+			<th>Cube Type</th>
+			<th>Scramble</th>
+			<th>Solve Time</th>
+			<th>Goal</th>
+			<th>Date/Time</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div id="settings">
+			
+		
+	</div>
 
 </div>
