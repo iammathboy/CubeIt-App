@@ -9,7 +9,6 @@ body {
 table {
         border: solid 1px;
         margin: 0px auto;
-        align
 }
 
 thead {
@@ -18,4 +17,23 @@ thead {
 
 tr:nth-child(even) {
     background-color: #efefef;
+}
+
+#column1-container {
+	float: left;
+	width: 45%;
+}
+
+#column1 {
+	margin-right: 10%;
+	margin-left: 5%;
+}
+
+#column2 {
+	float:left;
+	width:45%
+}
+
+#clear {
+	clear: both;
 }

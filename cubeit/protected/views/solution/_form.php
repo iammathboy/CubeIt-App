@@ -15,10 +15,10 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<!--<p class="note">Fields with <span class="required">*</span> are required.</p>-->
 
 	<?php echo $form->errorSummary($model); ?>
-	<!--
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'scramble'); ?>
 		<?php echo $form->textField($model,'scramble',array('size'=>60,'maxlength'=>128)); ?>
@@ -36,7 +36,7 @@
 		<?php echo $form->textField($model,'solve_time',array('size'=>60,'maxlength'=>128)); ?>
 		<?php echo $form->error($model,'solve_time'); ?>
 	</div>
-	-->
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'goal'); ?>
 		<?php echo $form->dropDownList($model,'goal',$model->goalOptions); ?>
@@ -48,16 +48,19 @@
 		<?php echo $form->dropDownList($model,'cube_type',$model->cubeTypes); ?>
 		<?php echo $form->error($model,'cube_type'); ?>
 	</div>
-	<!--
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'date'); ?>
 		<?php echo $form->textField($model,'date'); ?>
 		<?php echo $form->error($model,'date'); ?>
 	</div>
-	-->
+	
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		
+		<?php 
+		$model = new Solution;
+		echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
