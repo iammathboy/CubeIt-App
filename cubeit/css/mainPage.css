@@ -21,17 +21,17 @@ tr:nth-child(even) {
 
 #column1-container {
 	float: left;
-	width: 45%;
+	width: 70%;
 }
 
 #column1 {
-	margin-right: 10%;
+	margin-right: 5%;
 	margin-left: 5%;
 }
 
 #column2 {
 	float:left;
-	width:45%
+	width:30%
 }
 
 #clear {

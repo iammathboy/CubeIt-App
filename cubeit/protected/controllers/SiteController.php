@@ -2,6 +2,7 @@
 
 class SiteController extends Controller
 {
+
 	/**
 	 * Declares class-based actions.
 	 */
@@ -30,7 +31,7 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		
-		//Modify this to only select the particular user's solutions
+		//TO DO: Modify this to only select the particular user's solutions
 		$solutions = Solution::model()->findAll();
 		$this->render('index', array('solutions' => $solutions));
 	}
@@ -111,4 +112,7 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+	
+
+
 }

@@ -67,10 +67,7 @@ input[name="controls"] {
     ext-shadow: 0 0 5px rgba(255, 255, 255, 1);
 }
 
-@font-face {
-    font-family: 'digital';
-    src:url('fonts/DS-DIGI.TTF');
-}
+
 
 @keyframes moveten {
     0% {top: 0;}

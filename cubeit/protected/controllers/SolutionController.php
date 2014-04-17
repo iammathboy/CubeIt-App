@@ -2,6 +2,8 @@
 
 class SolutionController extends Controller
 {
+
+
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -63,6 +65,7 @@ class SolutionController extends Controller
 	public function actionCreate()
 	{
 		$model=new Solution;
+		$model->user_id = Yii::app()->user->id;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -70,13 +73,14 @@ class SolutionController extends Controller
 		if(isset($_POST['Solution']))
 		{
 			$model->attributes=$_POST['Solution'];
+
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				//Yii:app()->user->setFlash('solutionSent','Your solution record has been saved.');
+				$this->redirect(array('site/index'));
+				$this->refresh();
 		}
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
+		return $model;
 	}
 
 	/**
@@ -122,10 +126,22 @@ class SolutionController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Solution');
+		
+		$dataProvider=new CActiveDataProvider('Solution', array(
+			'criteria' => array(
+				'condition' => 'user_id=:id',
+				'params' => array(':id' => Yii::app()->user->id),
+			),
+			'pagination' => array(
+				'pageSize' => 5,
+			),
+		));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-		));
+		));	
+		
+		/*$solutions = Solution::model()->findAll();
+		$this->render('index', array('solutions' => $solutions));*/
 	}
 
 	/**
@@ -170,4 +186,6 @@ class SolutionController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	
 }

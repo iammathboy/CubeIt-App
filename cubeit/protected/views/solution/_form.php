@@ -13,7 +13,10 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
-)); ?>
+	'action' => array( '/solution/create' )
+)); 
+ 
+?>
 
 	<!--<p class="note">Fields with <span class="required">*</span> are required.</p>-->
 
@@ -21,19 +24,23 @@
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'scramble'); ?>
-		<?php echo $form->textField($model,'scramble',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $model->getGeneratedScramble(); ?>
+		<!--<?php echo $form->textField($model,'scramble',array('size'=>30,'maxlength'=>128)); ?>-->
 		<?php echo $form->error($model,'scramble'); ?>
 	</div>
-
+	
+	<!--
 	<div class="row">
 		<?php echo $form->labelEx($model,'user_id'); ?>
 		<?php echo $form->textField($model,'user_id'); ?>
 		<?php echo $form->error($model,'user_id'); ?>
 	</div>
+	-->
+	
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'solve_time'); ?>
-		<?php echo $form->textField($model,'solve_time',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->textField($model,'solve_time',array('size'=>30,'maxlength'=>128)); ?>
 		<?php echo $form->error($model,'solve_time'); ?>
 	</div>
 	
@@ -57,10 +64,7 @@
 	
 
 	<div class="row buttons">
-		
-		<?php 
-		$model = new Solution;
-		echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save');?>
 	</div>
 
 <?php $this->endWidget(); ?>

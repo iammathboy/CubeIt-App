@@ -4,14 +4,17 @@
 	$baseUrl = Yii::app()->baseUrl; 
 	$cs = Yii::app()->getClientScript();
 	$cs->registerScriptFile($baseUrl.'/scripts/prefixfree.min.js');
-	$cs->registerCssFile($baseUrl.'/css/stopwatch.css');
 	$cs->registerCssFile($baseUrl.'/css/mainPage.css');
+	$cs->registerCssFile($baseUrl.'/css/stopwatch.css');
+	
 ?>
+
 
 <div class="timer">
 	<input id="start" name="controls" type="radio"/>
 	<input id="stop" name="controls" type="radio"/>
 	<input id="reset" name="controls" type="radio"/>
+	
 	<div class="cell">
 		<div class="numbers tenhours moveten">0 1 2 3 4 5 6 7 8 9</div>
 	</div>
@@ -63,6 +66,7 @@
 </div>
 
 <br><br>
+
 
 <div id="column1-container">
 	<div id="column1">
@@ -116,7 +120,6 @@
 						}
 						
 						echo "<td>".$solution->date."</td>"; //Output date
-						
 					}
 				?>
 				</tr>
@@ -130,3 +133,4 @@
 </div>
 
 <div id="clear"></div>
+

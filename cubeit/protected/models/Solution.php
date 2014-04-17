@@ -20,6 +20,7 @@
  
 class Solution extends CActiveRecord
 {
+	private $generatedScramble;
 	
 	const GOAL_SPEED = 0;
 	const GOAL_MOVES = 1;
@@ -30,7 +31,7 @@ class Solution extends CActiveRecord
 	const CUBE_3x3x3 = 1;
 	const CUBE_4x4x4 = 2;
 	const CUBE_5x5x5 = 3;
-	
+
 	/**
 	 * @return array types of goals
 	 **/
@@ -69,9 +70,8 @@ class Solution extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('scramble, user_id, solve_time, goal, cube_type, date', 'required'),
-			array('user_id', 'numerical', 'integerOnly'=>true),
 			array('scramble, solve_time', 'length', 'max'=>128),
-			array('goal, cube_type', 'length', 'max'=>45),
+			array('user_id, goal, cube_type', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, scramble, user_id, solve_time, goal, cube_type, date', 'safe', 'on'=>'search'),
@@ -146,5 +146,22 @@ class Solution extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public function getGeneratedScramble() {
+		echo $this->generatedScramble;
+	}	
+	
+	public function generateScramble() {
+		$newScramble = "";
+		$options = array("U", "U'", "U2", "D", "D'", "D2", "L", "L'", "L2", "F", "F'", "F2", "B", "B'", "B2");
+		for ($i = 1; $i <= 20; $i++)
+			$newScramble .= $options[array_rand($options)]." ";
+			
+		return $newScramble;
+	}
+	
+	public function __construct() {
+		$generatedScramble = $this->generateScramble();
 	}
 }
